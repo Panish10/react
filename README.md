@@ -1,1 +1,1 @@
-Created this blank project, further there will be different branches to represent different project
+Create new branch for personal expense
