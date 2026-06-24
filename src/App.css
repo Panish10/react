@@ -9,9 +9,27 @@ background:#f4f6f9;
 
 .header{
 
-background:#1e293b;
-color:white;
-padding:20px;
+background:#ffffff;
+
+padding:20px 30px;
+
+border-bottom:1px solid #e5e7eb;
+
+}
+
+
+.header h1{
+
+margin:0;
+
+color:#1e293b;
+
+}
+
+
+.header p{
+
+color:#64748b;
 
 }
 
@@ -86,12 +104,21 @@ background:#475569;
 
 }
 
+.sidebar a.active{
 
+background:#2563eb;
+
+color:white;
+
+}
 
 main{
 
 flex:1;
+
 padding:30px;
+
+background:#f8fafc;
 
 }
 
@@ -108,10 +135,38 @@ gap:20px;
 
 .card{
 
+
 background:white;
-padding:20px;
-width:200px;
-border-radius:10px;
+
+padding:25px;
+
+width:220px;
+
+
+border-radius:12px;
+
+
+box-shadow:
+0 4px 10px rgba(0,0,0,0.08);
+
+
+}
+
+
+.card h3{
+
+color:#64748b;
+
+font-size:15px;
+
+}
+
+
+.card h2{
+
+color:#1e293b;
+
+font-size:28px;
 
 }
 
@@ -131,5 +186,42 @@ td,th{
 
 padding:15px;
 text-align:left;
+
+}
+
+@media(max-width:768px){
+
+
+.layout{
+
+flex-direction:column;
+
+}
+
+
+
+.sidebar{
+
+width:auto;
+
+height:auto;
+
+}
+
+
+
+.cards{
+
+flex-direction:column;
+
+}
+
+
+.card{
+
+width:auto;
+
+}
+
 
 }

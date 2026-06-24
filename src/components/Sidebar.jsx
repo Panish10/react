@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Sidebar() {
     return(
@@ -6,9 +6,9 @@ function Sidebar() {
             <h3>Menu</h3>
 
             <ul>
-                <li><Link to="/dashboard">🏠 Dashboard</Link></li>
-                <li><Link to="/expenses">💰 Expenses</Link></li>
-                <li><Link to="/settings">⚙ Settings</Link></li>
+                <li><NavLink to="/dashboard" className={({isActive})=>isActive ? "active" : ""}>🏠 Dashboard</NavLink></li>
+                <li><NavLink to="/expenses" className={({isActive})=>isActive ? "active" : ""}>💰 Expenses</NavLink></li>
+                <li><NavLink to="/settings" className={({isActive})=>isActive ? "active" : ""}>⚙ Settings</NavLink></li>
             </ul>
         </aside>
     );
