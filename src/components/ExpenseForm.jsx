@@ -10,7 +10,7 @@ function ExpenseForm({addExpense}) {
         e.preventDefault();
 
         const newExpense = {
-            id: Date.now(),
+            
             date: date,
             category: category,
             amount: Number(amount)

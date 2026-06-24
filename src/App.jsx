@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -14,32 +14,23 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from "./pages/Dashboard"
 import Expenses from "./pages/Expenses"
 import Settings from "./pages/Settings"
+import { getExpenses, saveExpense } from './api/expenseApi'
 
 function App() {
 
-  const [expenses, setExpenses] = useState([
-    {
-      id: 1,
-      date: "01 June",
-      category: "Rent",
-      amount: 12000,
-    },
-    {
-      id: 2,
-      date: "05 June",
-      category: "Food",
-      amount: 2500,
-    },
-    {
-      id: 3,
-      date: "10 June",
-      category: "Shopping",
-      amount: 5000,
-    }
-  ]);
+  const [expenses, setExpenses] = useState([]);
+  useEffect(()=>{
+    getExpenses().then(
+      response=>{
+        setExpenses(response.data);
+      }
+    );
+  },[]);
 
   function addExpense(expense) {
-    setExpenses([...expenses, expense])
+    saveExpense(expense).then(response=>{
+      setExpenses([...expenses, response.data])
+    });
   }
 
   const totalExpense = expenses.reduce((total, expense) => total + expense.amount, 0);
